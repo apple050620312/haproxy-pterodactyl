@@ -1,5 +1,5 @@
-FROM haproxy:lts-alpine3.22
+FROM haproxy:latest
 
 WORKDIR /home/container
 
-ENTRYPOINT ["haproxy", "-f", "/home/container/haproxy.cfg", "-db"]
+ENTRYPOINT ["sh", "-c", "haproxy -v && haproxy -f /home/container/haproxy.cfg -db"]
